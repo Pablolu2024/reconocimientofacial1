@@ -1,3 +1,7 @@
+
+const MODEL_URL = './models';
+
+
 document.addEventListener("DOMContentLoaded", async () => {
     const video = document.getElementById('video');
     const startCaptureButton = document.getElementById('startCapture');
@@ -14,9 +18,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
     // Cargar modelos de face-api.js
-    await faceapi.nets.ssdMobilenetv1.loadFromUri('/models');
-    await faceapi.nets.faceLandmark68Net.loadFromUri('/models');
-    await faceapi.nets.faceRecognitionNet.loadFromUri('/models');
+    await faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL);
+    await faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL);
+    await faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL);
 
     // Cargar imágenes estáticas y sus descriptores
     const labeledFaceDescriptors = await loadLabeledImages();
