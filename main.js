@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             drawBox.draw(overlay);
 
             if (result.label !== 'unknown') {
-                alert(`Coincidencia encontrada: ${result.label}`);
+                alert('Coincidencia encontrada: ${result.label}');
             } else {
                 alert("No se encontró ninguna coincidencia");
             }
@@ -53,14 +53,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     async function loadLabeledImages() {
-        const labels = ['person1', 'person2']; // Cambia estos nombres a los de tus imágenes
+        const labels = ['person1','person2']; // Cambia estos nombres a los de tus imágenes
         return Promise.all(
             labels.map(async label => {
                 const imgUrl = '/images/${label}.jpg';
                 const img = await faceapi.fetchImage(imgUrl);
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
                 if (!detections) {
-                    throw new Error(`No se pudo encontrar una cara en ${label}`);
+                    throw new Error('No se pudo encontrar una cara en ${label}');
                 }
                 return new faceapi.LabeledFaceDescriptors(label, [detections.descriptor]);
             })
