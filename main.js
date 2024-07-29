@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
    // Cargar imágenes estáticas y sus descriptores
     const labeledFaceDescriptors = await loadLabeledImages();
-    const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6);
+    const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.7);
 
     startCaptureButton.addEventListener('click', async () => {
         const displaySize = { width: video.width, height: video.height };
@@ -44,15 +44,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             drawBox.draw(overlay);
 
             if (result.label !== 'unknown') {
-                alert(`Coincidencia encontrada: ${result.label}`);
+                alert(`Acceso autorizado para: ${result.label}`);
             } else {
-                alert("No se encontró ninguna coincidencia");
+                alert("Acceso denegado");
             }
         });
     });
 
     async function loadLabeledImages() {
-        const labels = ['person1', 'person2']; // Cambia estos nombres a los de tus imágenes
+        const labels = ['Pablo', 'Sandy']; // Cambia estos nombres a los de tus imágenes
         return Promise.all(
             labels.map(async label => {
                 const imgUrl = `./images/${label}.jpg`;
