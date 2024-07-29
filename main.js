@@ -1,8 +1,6 @@
 
 const MODEL_URL = './models';
 
-
-
 document.addEventListener("DOMContentLoaded", async () => {
     const video = document.getElementById('video');
     const startCaptureButton = document.getElementById('startCapture');
