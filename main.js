@@ -1,6 +1,7 @@
 
 const MODEL_URL = './models';
-
+const labels = ['person1','person2']; // Cambia estos nombres a los de tus imágenes
+const imgUrl = '/images/${label}.jpg';
 
 document.addEventListener("DOMContentLoaded", async () => {
     const video = document.getElementById('video');
@@ -53,10 +54,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     async function loadLabeledImages() {
-        const labels = ['person1','person2']; // Cambia estos nombres a los de tus imágenes
+        
         return Promise.all(
             labels.map(async label => {
-                const imgUrl = '/images/${label}.jpg';
+                
                 const img = await faceapi.fetchImage(imgUrl);
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
                 if (!detections) {
