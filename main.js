@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const labels = ['person1', 'person2']; // Cambia estos nombres a los de tus imágenes
         return Promise.all(
             labels.map(async label => {
-                const imgUrl = `/images/${label}.jpg`;
+                const imgUrl = `https://github.com/Pablolu2024/reconocimientofacial1/tree/main/images/${label}.jpg`;
                 const img = await faceapi.fetchImage(imgUrl);
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor();
                 if (!detections) {
