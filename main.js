@@ -42,12 +42,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             const box = resizedDetections[i].detection.box;
             const text = result.toString();
             const drawBox = new faceapi.draw.DrawBox(box, { label: text });
-            drawBox.draw(overlay);
+           
 
             if (result.label !== 'unknown') {
                 alert(`Acceso autorizado para: ${result.label}`);
+                drawBox.draw(overlay);
             } else {
                 alert("Acceso denegado");
+                drawBox.draw(overlay);
             }
         });
     },10000); // 10000 ms = 10 segundos
