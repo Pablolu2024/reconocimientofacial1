@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const labeledFaceDescriptors = await loadLabeledImages();
     const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.7);
 
-    startCaptureButton.addEventListener('click', async () => {
+    // Iniciar captura automática cada 10 segundos
+    setInterval(async () => {
         const displaySize = { width: video.width, height: video.height };
         faceapi.matchDimensions(overlay, displaySize);
 
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 alert("Acceso denegado");
             }
         });
-    });
+    },10000); // 10000 ms = 10 segundos
 
     async function loadLabeledImages() {
         const labels = ['Pablo', 'Sandy']; // Cambia estos nombres a los de tus imágenes
