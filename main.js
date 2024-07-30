@@ -51,6 +51,17 @@ document.addEventListener("DOMContentLoaded", async () => {
                 alert("Acceso denegado");
                 drawBox.draw(overlay);
             }
+       
+switch (result.label) {
+  case "Pablo": alert('Hola Pablo Bienvenido');
+  case "Jirafa":
+  case "Perro":
+  case "Cerdo":
+        }
+          
+        
+        
+        
         });
     },10000); // 10000 ms = 10 segundos
 
