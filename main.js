@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const box = resizedDetections[i].detection.box;
             const text = result.toString();
             const drawBox = new faceapi.draw.DrawBox(box, { label: text });
-            //drawBox.draw(overlay);
+            drawBox.draw(overlay);
 
             if (result.label !== 'unknown') {
                 alert(`Acceso autorizado para: ${result.label}`);
