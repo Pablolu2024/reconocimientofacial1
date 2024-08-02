@@ -1,6 +1,6 @@
 
 const MODEL_URL = './models';
-
+const audio = new Audio("pablo.mp3");
 document.addEventListener("DOMContentLoaded", async () => {
     const video = document.getElementById('video');
     const startCaptureButton = document.getElementById('startCapture');
@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
        
 switch (result.label) {
-  case "Pablo": alert('Hola Pablo Bienvenido');
+  case "Pablo": {alert('Hola Pablo Bienvenido');
+                audio.play(); }
   case "Jirafa":
   case "Perro":
   case "Cerdo":
