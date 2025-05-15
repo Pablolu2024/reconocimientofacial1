@@ -55,8 +55,9 @@ document.addEventListener("DOMContentLoaded", async () => {
        
 switch (result.label) {
   case "Pablo": 
-        audio.play();
-        alert('Hola Pablo Bienvenido');
+        const texto = "Hola pablo bienvenido";
+        const msg = new SpeechSynthesisUtterance(texto);
+        window.speechSynthesis.speak(msg);
         break;
   case "Jirafa":
   case "Perro":
