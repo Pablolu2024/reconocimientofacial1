@@ -60,9 +60,9 @@ switch (result.label) {
         window.speechSynthesis.speak(msg);
         break;
   case "Sandy":
-        const texto = "Hola sandy bienvenida";
-        const msg = new SpeechSynthesisUtterance(texto);
-        window.speechSynthesis.speak(msg);
+        const texto1 = "Hola sandy bienvenida";
+        const msg1 = new SpeechSynthesisUtterance(texto1);
+        window.speechSynthesis.speak(msg1);
         break;
   case "Perro":
   case "Cerdo":
