@@ -1,6 +1,6 @@
 
 const MODEL_URL = './models';
-const audio = new Audio("Pablo.mp3");
+
 
 document.addEventListener("DOMContentLoaded", async () => {
     const video = document.getElementById('video');
@@ -59,7 +59,11 @@ switch (result.label) {
         const msg = new SpeechSynthesisUtterance(texto);
         window.speechSynthesis.speak(msg);
         break;
-  case "Jirafa":
+  case "Sandy":
+        const texto = "Hola sandy bienvenida";
+        const msg = new SpeechSynthesisUtterance(texto);
+        window.speechSynthesis.speak(msg);
+        break;
   case "Perro":
   case "Cerdo":
         }
