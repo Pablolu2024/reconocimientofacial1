@@ -46,27 +46,50 @@ document.addEventListener("DOMContentLoaded", async () => {
            
 
             if (result.label !== 'unknown') {
-                alert(`Acceso autorizado para: ${result.label}`);
+                alert(`Detectado : ${result.label}`);
                 drawBox.draw(overlay);
             } else {
-                alert("Acceso denegado");
+                alert("No detectado");
                 drawBox.draw(overlay);
             }
        
 switch (result.label) {
   case "Pablo": 
-        const texto = "Hola pablo bienvenido";
+        const texto = "Pablo alias San Ignacio";
         const msg = new SpeechSynthesisUtterance(texto);
         window.speechSynthesis.speak(msg);
         break;
-  case "Sandy":
-        const texto1 = "Hola sandy bienvenida";
+  case "Ivan":
+        const texto1 = "Ivan Cizañas Moyota";
         const msg1 = new SpeechSynthesisUtterance(texto1);
         window.speechSynthesis.speak(msg1);
         break;
-  case "Perro":
-  case "Cerdo":
-        }
+  case "Gonzalo":
+        const texto2 = "Gonzalito el duro de las Monjitas";
+        const msg2 = new SpeechSynthesisUtterance(texto2);
+        window.speechSynthesis.speak(msg2);
+        break;
+  case "Edwin":
+        const texto3 = "Edwin el jefecito";
+        const msg3 = new SpeechSynthesisUtterance(texto3);
+        window.speechSynthesis.speak(msg3);
+         break;
+  case "Fabian":
+        const texto4 = "Fabian caramelito Flor";
+        const msg4 = new SpeechSynthesisUtterance(texto4);
+        window.speechSynthesis.speak(msg4);
+         break;
+  case "Eduardo":
+        const texto5 = "Eduardo el peluchin de la sala";
+        const msg5 = new SpeechSynthesisUtterance(texto5);
+        window.speechSynthesis.speak(msg5);
+         break;
+default:
+        const texto20 = "No detectado";
+        const msg20 = new SpeechSynthesisUtterance(texto20);
+        window.speechSynthesis.speak(msg20);
+
+}
           
         
         
@@ -75,7 +98,7 @@ switch (result.label) {
     },10000); // 10000 ms = 10 segundos
 
     async function loadLabeledImages() {
-        const labels = ['Pablo', 'Sandy']; // Cambia estos nombres a los de tus imágenes
+        const labels = ['Pablo', 'Ivan' , 'Gonzalo' , 'Edwin' , 'Fabian' , 'Eduardo']; // Cambia estos nombres a los de tus imágenes
         return Promise.all(
             labels.map(async label => {
                 const imgUrl = `./images/${label}.jpg`;
